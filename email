@@ -1,0 +1,26 @@
+
+Dear Product Leader-
+
+I've been doing some exploration of our users, receipts, and brands data, and I noticed some strange stuff. It led to some questions I wanted get some clarification on.
+
+1. What is the appropriate way to see what brands are associatd with our reciepts?
+
+It's clear that a reciept can have items in it from multiple different brands, but the item data is very messy and undocumented. When I extract the data, it is unclear to me how the items data relates to our brands data. Merging them together on "brandCode" or "barcode" both seem like feasible options, but brandCode is missing for 62.5% of the records in our items data, and barcode is missing for 55.5%.
+
+2. Are there missing schema(s) I should know about when working with this data?
+
+It seems like brands and items can relate to each other via some kind of "partner product file" table, but I can't seem to find this data. Could you provide clarity on this or point me in the right direction?
+
+Additionally, it looks a few of the items in the receipts data have columns relating to a "metaBrite campaign". I'm not sure which columns are relevant to this or what a "metaBrite campaign" is, but we could clean up the existing data with a new schema for this information if you granted me some clarity on this.
+
+3. Other small anomalies to note:
+
+We're missing the lastLogin time, signUpSource, and state for 12.5%, 9.7%, and 11.3% of users, respectively- do you know if there's an issue with our traffic logging that could be causing this? Might be something worth looking into.
+
+Additionally, it looks like ~5% of brands in our brands data don't have the correct brandCode. It looks like the barcode was erroneously entered as brandCode for these records. I'm converned something is wrong with our logging here too.
+
+As we continue to scale our data and business, anomalies like these will grow and make our business analytics less accurate. We should remedy these issues soon while they're relatively small so we can avoid the problem snowballing in the future.
+
+Thanks!
+-Neil
+
